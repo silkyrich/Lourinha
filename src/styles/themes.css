@@ -1,0 +1,70 @@
+/* ============================================================
+   THEME VARIABLES
+   Team Skateboard (default): near-black Nike-tier dark mode + orange.
+   Team Skate (rollers): cream + hot pink + cyan retro roller-disco.
+   ============================================================ */
+
+:root,
+[data-team="skateboard"] {
+  /* surfaces */
+  --bg:           #0a0a0a;
+  --bg-elev:      #111111;
+  --bg-elev-2:    #161616;
+  --bg-inverse:   #f7f3ec;
+
+  /* text */
+  --fg:           #f7f3ec;
+  --fg-soft:      #b5afa3;
+  --fg-faint:     #6c6862;
+  --fg-inverse:   #0a0a0a;
+
+  /* lines */
+  --line:         #1f1f1f;
+  --line-strong:  #2c2c2c;
+
+  /* brand */
+  --accent:       #ff4500;
+  --accent-soft:  #ff7a3c;
+  --accent-deep:  #d83400;
+  --accent-2:     #ffd200;
+  --accent-3:     #2b6a8f;
+
+  /* shadows */
+  --shadow-sm:    0 1px 2px rgba(0,0,0,0.4);
+  --shadow:       0 6px 30px rgba(0,0,0,0.4);
+  --shadow-lg:    0 24px 60px rgba(0,0,0,0.55);
+
+  /* radii */
+  --r-sm:         4px;
+  --r:            10px;
+  --r-lg:         20px;
+
+  --hero-tint:    rgba(0,0,0,0.55);
+}
+
+[data-team="skate"] {
+  --bg:           #fef0e8;
+  --bg-elev:      #ffffff;
+  --bg-elev-2:    #fff7f1;
+  --bg-inverse:   #1a0033;
+
+  --fg:           #1a0033;
+  --fg-soft:      #4d3a66;
+  --fg-faint:     #7e6a8f;
+  --fg-inverse:   #ffffff;
+
+  --line:         #f0d6cc;
+  --line-strong:  #e0bdb0;
+
+  --accent:       #ff2d8a;
+  --accent-soft:  #ff8fb8;
+  --accent-deep:  #c4216a;
+  --accent-2:     #00d4ff;
+  --accent-3:     #5a8ad6;
+
+  --shadow-sm:    0 1px 2px rgba(95,30,80,0.06);
+  --shadow:       0 12px 32px rgba(95,30,80,0.10);
+  --shadow-lg:    0 24px 60px rgba(95,30,80,0.18);
+
+  --hero-tint:    rgba(255,45,138,0.22);
+}

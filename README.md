@@ -1,72 +1,77 @@
 # Lourinhã 2026 — Skate Strong
 
-Official trip HQ for Cez's Lourinhã week, 30 May – 6 June 2026.
+Official trip HQ for Skate Strong's Lourinhã week, 30 May – 6 June 2026.
 
-Static site, no build step. Files:
+**Stack:** Vite + React 18 + TypeScript, Framer Motion for animation,
+react-leaflet for the map. Static export deployed to GitHub Pages via
+GitHub Actions.
 
-- `index.html` — content
-- `styles.css` — theme variables + layout
-- `map.js` — Leaflet map (with "Open in Google Maps" deep links)
-- `theme.js` — splash modal, team switcher, scroll reveal
-- `lourinha-2026.ics` — calendar file (alongside the Google Calendar
-  add link in the hero / bumper strip)
+## Develop
 
-## Things to swap before the site goes out
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # production build into dist/
+npm run preview  # preview the production build
+```
 
-These are the placeholders the build leaves behind for Cez/you to
-fill in:
+## Hosting
+
+`.github/workflows/pages.yml` installs deps, runs `npm run build`, and
+publishes `dist/` to GitHub Pages on every push to `main`. One-time
+setup: **Settings → Pages → Source → GitHub Actions**.
+
+## Placeholders to swap
 
 | Placeholder | Where | What to do |
 |---|---|---|
-| Brand logo / colours | `styles.css` (`--accent`, brand SVG in `index.html`) | Swap in Skate Strong's real palette and logo once shared |
-| Host photo | `index.html` `.host-photo img` | Swap the Picsum URL for a real portrait |
-| Hero image | `index.html` `.hero-photo img` | Swap for a real Lourinhã / skate shot |
-| Spot photos | `index.html` each `.spot-photo img` | Swap each Picsum URL for a real shot of the spot |
-| Shared photo album | `index.html` `#album-link` href | Paste the Google Photos / Drive album share link |
-| giscus IDs | `index.html` `<script>` near `#chat` | See *Wiring up giscus* below |
+| Hero image | `src/components/Hero.tsx` | Replace the picsum URL with a real Lourinhã / skate shot |
+| Host photo | `src/components/Welcome.tsx` | Replace the picsum URL with Cez's portrait |
+| Spot photos | `src/data/spots.ts` `photoSeed` | Each seed feeds a picsum URL; swap for real photos |
+| Album photos | `src/components/Album.tsx` `seeds` | Same pattern |
+| Album link | `src/components/Album.tsx` `#album-link` href | Paste Google Photos / Drive share URL |
+| Brand colours | `src/styles/themes.css` | Adjust `--accent`, `--bg`, etc. once Skate Strong's palette is shared |
+| giscus IDs | `src/components/Chat.tsx` `GISCUS_REPO_ID`, `GISCUS_CATEGORY_ID` | See *Wiring up giscus* below |
 
-Every placeholder uses Picsum (Unsplash-curated stock) so the page
-looks complete out of the box.
+## Two-team theming
 
-## The team picker
+The splash modal on first visit asks which team you're on:
 
-On first visit, a splash modal asks the visitor to pick **Team
-Skateboard** (orange/black, gritty street) or **Team Skate** (pink/
-teal, retro roller-disco). The choice persists in `localStorage`
-under `cez.team` and switches the whole palette. A toggle in the
-nav swaps teams at any time.
+- **Team Skateboard** — dark mode (near-black), orange accent. Default.
+- **Team Skate** — light mode (warm cream), hot-pink/cyan accent.
 
-Themes live on `[data-team="skateboard"]` and `[data-team="skate"]`
-in `styles.css` — both override the same CSS custom properties, so
-adding a third team is a copy/paste away.
+The choice persists in `localStorage` under `skatestrong.team`. A toggle
+in the nav swaps teams at any time. Theme vars live in
+`src/styles/themes.css` on `[data-team="skateboard"]` and
+`[data-team="skate"]`. Adding a third team is a copy/paste.
 
-## Hosting on GitHub Pages
+## Wiring up giscus (chat + votes)
 
-Deployed by GitHub Actions (`.github/workflows/pages.yml`) on every
-push to `main`. One-time setup: **Settings → Pages → Source →
-GitHub Actions**.
+Comments and reactions use [giscus](https://giscus.app), backed by GitHub
+Discussions. One-time setup:
 
-## Wiring up giscus
-
-The chat / vote section uses [giscus](https://giscus.app), backed by
-GitHub Discussions. One-time setup, ~5 minutes:
-
-1. **Enable Discussions**: *Settings → General → Features → Discussions.*
+1. **Enable Discussions**: *Settings → General → Features → Discussions*.
 2. **Install the giscus app**: <https://github.com/apps/giscus>.
 3. Visit <https://giscus.app>, paste `silkyrich/Lourinha`, pick the
-   `General` Discussion category, enable reactions, and copy:
+   `General` Discussion category, enable reactions. The page emits:
    - `data-repo-id`
    - `data-category-id`
-4. Paste them into the giscus `<script>` in `index.html` in place of
-   the two `REPLACE_ME` values. Commit, push.
+4. Open `src/components/Chat.tsx`, set the two constants at the top of
+   the file. Commit, push.
 
-Until those are filled in, the chat section shows a self-explaining
-placeholder.
+Until those are filled in, the chat section renders a placeholder with
+these same instructions.
 
-## Local preview
+## Project layout
 
 ```
-python3 -m http.server 8000
+src/
+  components/   one file per section + Splash, TopNav, Hero, Footer
+  data/         spots, phrases, area cards, todo items, practical bits
+  lib/          team context + Reveal animation helper
+  styles/       global, themes (per-team CSS variables), components
+  App.tsx       composes the page
+  main.tsx      React + TeamProvider boot
+public/
+  lourinha-2026.ics
 ```
-
-Open <http://localhost:8000>.
