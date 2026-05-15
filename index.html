@@ -3,191 +3,522 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jim's Lourinhã Skate Trip — 30 May → 6 June 2026</title>
-  <meta name="description" content="A pocket guide for Jim's skating week in Lourinhã, Portugal: skate spots, events, food and the lay of the land." />
+  <title>Lourinhã 2026 — Jim & the Crew</title>
+  <meta name="description" content="A pocket HQ for twenty-one strangers on a skating week in Lourinhã, Portugal, 30 May to 6 June 2026. Maps, spots, food, plans, and Portuguese phrases for getting out of trouble." />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin="" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header class="hero">
+<nav class="topnav" aria-label="Primary">
+  <div class="topnav-inner">
+    <a class="topnav-brand" href="#top">Lourinhã '26</a>
+    <button class="topnav-toggle" aria-expanded="false" aria-controls="topnav-links" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="topnav-links" class="topnav-links">
+      <li><a href="#welcome">Welcome</a></li>
+      <li><a href="#map">Map</a></li>
+      <li><a href="#skate">Skate</a></li>
+      <li><a href="#area">Around</a></li>
+      <li><a href="#week">The week</a></li>
+      <li><a href="#food">Food &amp; supplies</a></li>
+      <li><a href="#phrases">Portuguese</a></li>
+      <li><a href="#practical">Practical</a></li>
+      <li><a href="#chat">Chat &amp; votes</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header id="top" class="hero">
   <div class="wrap">
     <p class="kicker">Saturday 30 May → Saturday 6 June 2026</p>
-    <h1>Jim's Lourinhã Skate Trip</h1>
-    <p class="lede">Eight days of Atlantic wind, dinosaur bones, and as many concrete bowls as the Oeste can offer. A pocket guide.</p>
-    <nav class="chips" aria-label="Section links">
-      <a href="#about">The town</a>
-      <a href="#skate">Where to skate</a>
-      <a href="#events">That week</a>
-      <a href="#itinerary">Day by day</a>
-      <a href="#practical">Practical</a>
-    </nav>
+    <h1>Lourinhã, twenty-one of us, one week.</h1>
+    <p class="lede">Jim and twenty others are about to share an Atlantic town for eight days. This is the lobby: maps, skate surfaces, supermarkets, a calendar that you can shape, and enough Portuguese to keep you out of jail.</p>
+    <div class="hero-cta">
+      <a class="btn btn--primary" href="#chat">Say hello in the chat</a>
+      <a class="btn" href="#map">Open the map</a>
+    </div>
   </div>
 </header>
 
 <main>
 
-<section id="about" class="band">
+<section id="welcome" class="band">
   <div class="wrap">
-    <h2>The town</h2>
-    <p>Lourinhã is a small town on Portugal's Oeste coast, about 65 km north of Lisbon. Population sits around 25,000 across the wider municipality, but the centre itself is walkable in twenty minutes end to end. Whitewashed houses, a couple of decent squares, a Manueline‑era church, and — three kilometres west — a string of cliff‑backed Atlantic beaches.</p>
-    <p>Two things the town is genuinely known for:</p>
-    <ul>
-      <li><strong>Dinosaurs.</strong> The cliffs around Praia da Areia Branca and Porto Dinheiro have produced some of Europe's most important Late Jurassic fossils. The <em>Museu da Lourinhã</em> in the centre is small but worth an hour — they have one of the only nests of dinosaur eggs with embryos inside ever found.</li>
-      <li><strong>Aguardente.</strong> The DOC <em>Aguardente Vínica Lourinhã</em> is one of only three demarcated brandy regions in Europe. The other two are Cognac and Armagnac. Not a bad evening drink after a long session.</li>
-    </ul>
-    <p>The wind is the thing to know about. Lourinhã is exposed to the <em>nortada</em>, the northerly that picks up most afternoons in late spring. Skate the bowls in the morning, hide in the lee of buildings or head to a sheltered street spot after lunch.</p>
+    <h2>Welcome</h2>
+    <p>You've each booked yourselves into a week of skating and not-quite-knowing-anyone in a small town on the Portuguese coast. That's the brief. The town is Lourinhã, an hour north of Lisbon — whitewashed houses, a cliff-backed beach four kilometres west, dinosaur fossils in the cliffs, and a brandy named after the town that you should drink at least once.</p>
+    <p>This page does three jobs:</p>
+    <ol>
+      <li><strong>Introductions.</strong> Scroll to the chat at the bottom and drop your name, where you're flying in from, and one thing you want out of the week. Star (<em>thumbs-up</em>) other people's comments to register a vote on plans.</li>
+      <li><strong>Information.</strong> A scouted map, a graded list of skate surfaces inside a 90-minute drive, scenic routes, food, and a calendar of what's confirmed and what's still up for grabs.</li>
+      <li><strong>Organisation.</strong> Where two or three options exist, the gang picks. React to the comment that matches your vote.</li>
+    </ol>
+    <p>Nothing on this page is locked. Disagree in the comments, propose a better plan, change the vote.</p>
   </div>
 </section>
 
-<section id="skate" class="band band--alt">
+<section id="map" class="band band--alt">
   <div class="wrap">
-    <h2>Where to skate</h2>
-    <p class="note">A note on accuracy: skateparks come and go, and surfaces re‑pour. Every spot below is worth a check on a satellite map and a recent Instagram search before committing a day to it. Local shops will give you the best read on what's actually rolling that week.</p>
+    <h2>The map</h2>
+    <p>Everything in scope for the week — the town, the skate spots, the day trips, the markets and the supermarket runs. Click a marker for details. Filter the categories below the map.</p>
 
+    <div id="leaflet-map" role="img" aria-label="Map of Lourinhã and surrounding area with skate spots, towns, food and shops marked."></div>
+
+    <div class="map-legend" aria-label="Map legend and filters">
+      <button class="legend-btn legend-btn--town is-active" data-cat="town">Towns</button>
+      <button class="legend-btn legend-btn--skate is-active" data-cat="skate">Skate spots</button>
+      <button class="legend-btn legend-btn--scenic is-active" data-cat="scenic">Scenic</button>
+      <button class="legend-btn legend-btn--food is-active" data-cat="food">Food &amp; shops</button>
+    </div>
+
+    <p class="note">Pin positions are approximate. If you arrive at a spot and the marker is fifty metres off, that's the map being polite, not the spot being wrong. Correct it in the chat.</p>
+  </div>
+</section>
+
+<section id="skate" class="band">
+  <div class="wrap">
+    <h2>Skate surfaces, graded</h2>
+    <p>Everywhere worth wheeling at, inside a 90-minute drive of Lourinhã. Each card lists surface, distance, what it's good for, and how confident the entry is. The confidence flag matters: a skatepark that existed in 2022 may have been re-poured or fenced off by 2026. Verify on a recent satellite view and a local Instagram search before committing the day.</p>
+
+    <h3 class="cat-heading">In and around Lourinhã (under 15 min)</h3>
     <div class="spots">
       <article class="spot">
-        <h3>Around Lourinhã itself</h3>
-        <p>The town centre doesn't have a marquee skatepark, but the seafront promenade at <strong>Praia da Areia Branca</strong> (4 km west, regular buses) has long stretches of smooth tile and a few ledges and banks worth a cruise. Mornings before the wind comes up.</p>
-        <p>For street, the square in front of the <strong>Câmara Municipal</strong> and the paved area by the <strong>Mercado Municipal</strong> are the obvious starting points — granite ledges, polished stone, generally tolerant if you turn up before the shops open or after they close.</p>
+        <header class="spot-head">
+          <h4>Praia da Areia Branca promenade</h4>
+          <span class="badge badge--good">Confident</span>
+        </header>
+        <dl class="spot-meta">
+          <dt>Type</dt><dd>Smooth tiled promenade, cruising</dd>
+          <dt>Drive</dt><dd>8 min from Lourinhã centre</dd>
+          <dt>Surface</dt><dd>Polished tile + concrete, mostly flat with gentle gradients</dd>
+          <dt>Best for</dt><dd>Mornings before the wind, sunset cruise, easy warm-up</dd>
+        </dl>
+        <p>The seafront walk runs ~1 km, broken by a few sets of low steps. Some sections have ledges and modest banks. Get there before 11am — by lunch the <em>nortada</em> wind pushes you sideways.</p>
       </article>
 
       <article class="spot">
-        <h3>Peniche — 25 km north</h3>
-        <p>Peniche is the surf town of central Portugal, and its <strong>Skatepark da Papoa</strong> sits on the headland looking out at the lighthouse. Concrete bowl plus a street section, ocean on three sides. Forty minutes by car, longer by the Rodoviária do Tejo bus. The single most rewarding day trip on the list.</p>
+        <header class="spot-head">
+          <h4>Praça da República, Lourinhã centre</h4>
+          <span class="badge badge--ok">Likely</span>
+        </header>
+        <dl class="spot-meta">
+          <dt>Type</dt><dd>Town square, granite ledges</dd>
+          <dt>Drive</dt><dd>In town</dd>
+          <dt>Surface</dt><dd>Set granite slabs, polished from foot traffic</dd>
+          <dt>Best for</dt><dd>Casual street, ledge play, early or late</dd>
+        </dl>
+        <p>The main square in front of the Câmara Municipal. Tolerance is reasonable outside business hours; less so during weekday market mornings.</p>
       </article>
 
       <article class="spot">
-        <h3>Caldas da Rainha — 30 km north</h3>
-        <p>Bigger inland town, decent municipal park, and a much livelier scene than anywhere on the coast. Worth pairing with the Saturday market (one of the best in Portugal) and a stop at the Bordallo Pinheiro ceramics factory if your skating partner has any interest in not‑skating.</p>
-      </article>
-
-      <article class="spot">
-        <h3>Torres Vedras — 30 km south</h3>
-        <p>Closer to Lisbon, bigger town, and the skatepark gets recommended by people who actually live in the region. Easy detour on the day Jim arrives or leaves if he's coming through Lisbon.</p>
-      </article>
-
-      <article class="spot">
-        <h3>Ericeira — 40 km south</h3>
-        <p>A World Surfing Reserve, so the vibe is unmistakable, and there's a small park plus a lot of smooth promenade. Touristy in a way Lourinhã isn't, but the food makes up for it.</p>
-      </article>
-
-      <article class="spot">
-        <h3>Lisbon, if a full day opens up</h3>
-        <p>An hour south on the A8. <strong>LX Factory</strong>, the <strong>MAAT</strong> riverside, and the marble plazas of <strong>Praça do Comércio</strong> and <strong>Terreiro do Paço</strong> are the obvious cruising routes. The DIY scene in Marvila is worth asking a local about.</p>
+        <header class="spot-head">
+          <h4>N247 lay-bys, north of town</h4>
+          <span class="badge badge--maybe">Scout</span>
+        </header>
+        <dl class="spot-meta">
+          <dt>Type</dt><dd>Empty asphalt, viewpoint pull-offs</dd>
+          <dt>Drive</dt><dd>5–15 min</dd>
+          <dt>Surface</dt><dd>Fresh-ish asphalt in places, patchy in others</dd>
+          <dt>Best for</dt><dd>Cruising, downhill, sunset rolls</dd>
+        </dl>
+        <p>The coast road north of Lourinhã has long quiet stretches and pull-offs above the cliffs. The further from the town, the less traffic. Avoid weekends mid-afternoon.</p>
       </article>
     </div>
 
-    <p class="aside">Local intel: <strong>Ondamigas</strong> (Praia da Areia Branca) and the surf shops along the Peniche seafront tend to know who's skating where. A coffee and a question goes further than any guidebook.</p>
+    <h3 class="cat-heading">Day trips (under 45 min)</h3>
+    <div class="spots">
+      <article class="spot">
+        <header class="spot-head">
+          <h4>Peniche — Papoa headland skatepark</h4>
+          <span class="badge badge--good">Confident</span>
+        </header>
+        <dl class="spot-meta">
+          <dt>Type</dt><dd>Concrete bowl + street section</dd>
+          <dt>Drive</dt><dd>25 min north</dd>
+          <dt>Surface</dt><dd>Concrete, ocean-weathered</dd>
+          <dt>Best for</dt><dd>Bowl session, the trip's main event</dd>
+        </dl>
+        <p>On the headland looking at the lighthouse, ocean on three sides. Cleanest in the morning before the salt damp lifts. Pair with a fish lunch in Peniche town and the Cabo Carvoeiro lighthouse drive.</p>
+      </article>
+
+      <article class="spot">
+        <header class="spot-head">
+          <h4>Caldas da Rainha — municipal park</h4>
+          <span class="badge badge--ok">Likely</span>
+        </header>
+        <dl class="spot-meta">
+          <dt>Type</dt><dd>Municipal skatepark</dd>
+          <dt>Drive</dt><dd>30 min north-east</dd>
+          <dt>Surface</dt><dd>Concrete, generally decent</dd>
+          <dt>Best for</dt><dd>Mixed-skill session, pair with Saturday market</dd>
+        </dl>
+        <p>Caldas is a livelier inland town with a real scene. The Saturday morning market is one of the best in Portugal; a Saturday combo of skate + market + the Bordallo Pinheiro ceramics factory is a complete day.</p>
+      </article>
+
+      <article class="spot">
+        <header class="spot-head">
+          <h4>Torres Vedras</h4>
+          <span class="badge badge--ok">Likely</span>
+        </header>
+        <dl class="spot-meta">
+          <dt>Type</dt><dd>Municipal skatepark</dd>
+          <dt>Drive</dt><dd>30 min south</dd>
+          <dt>Surface</dt><dd>Concrete</dd>
+          <dt>Best for</dt><dd>Quieter local session, en route to/from Lisbon</dd>
+        </dl>
+        <p>Bigger town than Lourinhã, smaller than Caldas. Worth a half-day if you want a session away from the obvious tourist towns.</p>
+      </article>
+
+      <article class="spot">
+        <header class="spot-head">
+          <h4>Ericeira</h4>
+          <span class="badge badge--ok">Likely</span>
+        </header>
+        <dl class="spot-meta">
+          <dt>Type</dt><dd>Small park + promenade cruising</dd>
+          <dt>Drive</dt><dd>40 min south</dd>
+          <dt>Surface</dt><dd>Concrete park, smooth tile promenade</dd>
+          <dt>Best for</dt><dd>Skate + surf-watch + the best fish lunch of the week</dd>
+        </dl>
+        <p>World Surfing Reserve, unmistakable surf-town vibe, narrow whitewashed streets. The skatepark is small but the day is about the round trip.</p>
+      </article>
+
+      <article class="spot">
+        <header class="spot-head">
+          <h4>Óbidos walls — cruise only</h4>
+          <span class="badge badge--maybe">Cruise</span>
+        </header>
+        <dl class="spot-meta">
+          <dt>Type</dt><dd>Cobble + smooth tile inside the walls</dd>
+          <dt>Drive</dt><dd>35 min north-east</dd>
+          <dt>Surface</dt><dd>Mixed — beautiful, not always rollable</dd>
+          <dt>Best for</dt><dd>Tourist day, photos, cherry liqueur in chocolate cups</dd>
+        </dl>
+        <p>The walled medieval town is gorgeous and mostly hostile to wheels. Carry boards; don't expect a session. Do drink a <em>ginjinha</em>.</p>
+      </article>
+    </div>
+
+    <h3 class="cat-heading">Bigger trips (60–90 min)</h3>
+    <div class="spots">
+      <article class="spot">
+        <header class="spot-head">
+          <h4>Lisbon — central marble plazas</h4>
+          <span class="badge badge--good">Confident</span>
+        </header>
+        <dl class="spot-meta">
+          <dt>Type</dt><dd>Cruising on polished stone, multiple parks</dd>
+          <dt>Drive</dt><dd>60 min south</dd>
+          <dt>Surface</dt><dd>Famous limestone <em>calçada</em>, varying from glass-smooth to ankle-eating</dd>
+          <dt>Best for</dt><dd>A whole-day urban cruise; <strong>LX Factory</strong>, the <strong>MAAT</strong> riverside, <strong>Praça do Comércio</strong>, <strong>Terreiro do Paço</strong></dd>
+        </dl>
+        <p>Lisbon rewards a planned route over scattered hopping. Riverside is the smoothest path; the historic centre is photogenic but cobbled.</p>
+      </article>
+
+      <article class="spot">
+        <header class="spot-head">
+          <h4>Nazaré — clifftop promenade</h4>
+          <span class="badge badge--ok">Cruise</span>
+        </header>
+        <dl class="spot-meta">
+          <dt>Type</dt><dd>Smooth tiled promenade with dramatic view</dd>
+          <dt>Drive</dt><dd>50 min north</dd>
+          <dt>Surface</dt><dd>Polished tile</dd>
+          <dt>Best for</dt><dd>A photo day; lighthouse, giant-wave canyon viewpoint</dd>
+        </dl>
+        <p>The waves that surf the internet land here in winter, but the clifftop walk and the funicular down to Praia da Nazaré are worth the drive year-round.</p>
+      </article>
+
+      <article class="spot">
+        <header class="spot-head">
+          <h4>Cascais seafront</h4>
+          <span class="badge badge--ok">Cruise</span>
+        </header>
+        <dl class="spot-meta">
+          <dt>Type</dt><dd>Long seafront promenade Estoril → Cascais</dd>
+          <dt>Drive</dt><dd>70 min south</dd>
+          <dt>Surface</dt><dd>Smooth tile, ~7 km uninterrupted</dd>
+          <dt>Best for</dt><dd>The longest cruise of the trip, fancy lunch, the long way home via Sintra</dd>
+        </dl>
+        <p>One of the best long cruises on the Atlantic. Roll Estoril casino to Cascais marina, eat, return via the N247 over the Serra de Sintra.</p>
+      </article>
+    </div>
+
+    <div class="vote-prompt">
+      <p><strong>Vote on the week's day trips.</strong> Of Peniche, Caldas, Ericeira, Nazaré, Cascais and Lisbon, we can comfortably do three or four. Scroll to the chat at the bottom — find the comment titled <em>"Day trip vote"</em> and react with a thumbs-up on the ones you most want.</p>
+    </div>
   </div>
 </section>
 
-<section id="events" class="band">
+<section id="area" class="band band--alt">
   <div class="wrap">
-    <h2>What's on, 30 May → 6 June</h2>
-    <p class="note">I haven't verified specific 2026 listings, so this section points at the right sources rather than inventing a programme. Check these in the week before Jim flies:</p>
+    <h2>The area, properly looked at</h2>
+    <p>Lourinhã sits in the Oeste region — the bit of Portugal between Lisbon and the silver coast. Inside a 90-minute drive you have medieval walled towns, a UNESCO mountain palace complex, the westernmost point of continental Europe, the world's most photographed giant waves, two fishing ports, a brandy region and the Portuguese capital. The eight days are not enough.</p>
 
-    <ul class="links">
-      <li><a href="https://www.cm-lourinha.pt/" rel="noopener">Câmara Municipal da Lourinhã</a> — official events calendar (<em>Agenda</em>) for the municipality.</li>
-      <li><a href="https://www.visitlourinha.pt/" rel="noopener">Visit Lourinhã</a> — the tourism office's curated picks.</li>
-      <li><a href="https://www.visitportugal.com/en" rel="noopener">Visit Portugal</a> — national event search, filter by Oeste / dates.</li>
-      <li>Facebook: search <em>Lourinhã</em>, <em>Areia Branca</em>, <em>Peniche</em>. A lot of small‑town Portuguese culture still lives there.</li>
-    </ul>
+    <h3>Scenic drives</h3>
+    <div class="grid grid--cards">
+      <article class="card">
+        <h4>The N247 coast: Peniche to Ericeira</h4>
+        <p>The single best drive in the region. Cliffs, fishing villages, surf beaches, vineyards. Stop at Vimeiro, Areia Branca, Santa Cruz, Praia Azul. About 75 km end to end at the speed it deserves.</p>
+        <p class="card-meta">2.5h with stops · paved · low traffic outside July/August</p>
+      </article>
 
-    <h3>Things that tend to land in this window</h3>
-    <p>None of these are guaranteed for 2026 — annual programmes shift — but they are the kind of thing to look for:</p>
+      <article class="card">
+        <h4>Serra de Sintra loop</h4>
+        <p>N375 climbs into the Sintra mountains — hairpins, eucalyptus shade, cool air after the coast. Drop down to Cabo da Roca (westernmost point of continental Europe), then the coast road into Cascais.</p>
+        <p class="card-meta">3h with stops · paved · busy on weekends</p>
+      </article>
+
+      <article class="card">
+        <h4>Inland wine country</h4>
+        <p>Lourinhã → Bombarral → Óbidos → Alcobaça. Vineyards, the medieval walled town, and the cistercian monastery of Alcobaça with the tomb of Pedro and Inês — a thousand-year-old love story carved in stone.</p>
+        <p class="card-meta">Half day · paved · cultural-heavy, light skating</p>
+      </article>
+
+      <article class="card">
+        <h4>The Nazaré clifftop run</h4>
+        <p>Up the coast via São Martinho do Porto (perfect shell-shaped bay), into Nazaré, up the funicular to Sítio for the giant-wave canyon viewpoint, then a slow road back via Alcobaça.</p>
+        <p class="card-meta">Full day · paved · dramatic</p>
+      </article>
+
+      <article class="card">
+        <h4>Mafra &amp; the royal road</h4>
+        <p>The Palácio Nacional de Mafra is the largest baroque palace in Portugal; the surrounding royal hunting forest (Tapada de Mafra) is open to visitors. The N9 between Lourinhã and Mafra is a quiet inland alternative to the motorway.</p>
+        <p class="card-meta">Half day · paved · low-key</p>
+      </article>
+
+      <article class="card">
+        <h4>Sintra town</h4>
+        <p>UNESCO site, four fairy-tale palaces in walking distance, vertical streets, tourist-heavy by 10am. Go early or go late. The Pena Palace and Quinta da Regaleira are the famous two; Monserrate is the quietest and arguably the best.</p>
+        <p class="card-meta">Full day · steep · busy</p>
+      </article>
+    </div>
+
+    <h3>What's worth a stop on the way to a skate</h3>
     <ul>
-      <li><strong>Festas do Concelho da Lourinhã</strong> — the town's municipal festival, historically clustered around early summer. Concerts in the main square, food stalls, bullring events, fireworks one night.</li>
-      <li><strong>Dia da Cidade / Feriado Municipal</strong> — towns in the Oeste celebrate their municipal day with a public holiday and a programme of cultural events. Worth checking whether Lourinhã's falls this week.</li>
-      <li><strong>Surf contests at Peniche / Supertubos</strong> — late spring is a quieter contest window than autumn, but local club competitions run through the season.</li>
-      <li><strong>Wine and aguardente tastings</strong> at the cooperative just outside town — bookable through Visit Lourinhã.</li>
-      <li><strong>Markets</strong> — Lourinhã runs a monthly fair (<em>Feira Mensal</em>); the date moves, so check the Câmara's calendar for whether one falls in the trip window. Caldas da Rainha's Saturday market runs every week without fail — <strong>30 May</strong> and <strong>6 June</strong> are both in scope.</li>
-    </ul>
-
-    <h3>Confirmed weekly fixtures</h3>
-    <ul>
-      <li><strong>Caldas da Rainha market</strong> — every Saturday morning. Catch it on the way in (30 May) or out (6 June).</li>
-      <li><strong>Museu da Lourinhã</strong> — open Tue–Sun, closed Mondays. Plan a rainy afternoon around it.</li>
+      <li><strong>To Peniche</strong> — the salt pans south of the causeway; the Berlengas ferry if anyone wants an extra hour at sea.</li>
+      <li><strong>To Caldas</strong> — Óbidos (15 min detour), Foz do Arelho (lagoon beach), the Bordallo Pinheiro ceramics factory shop.</li>
+      <li><strong>To Ericeira</strong> — Mafra palace en route; or take the cliff road via Santa Cruz for the scenic version.</li>
+      <li><strong>To Lisbon</strong> — Belém for the original <em>pastéis</em>, the MAAT for art, the Time Out Market for a chaotic late lunch.</li>
     </ul>
   </div>
 </section>
 
-<section id="itinerary" class="band band--alt">
+<section id="week" class="band">
   <div class="wrap">
-    <h2>A loose day‑by‑day</h2>
-    <p>Not a schedule, more a skeleton. Wind, hangovers, and good days at a spot will rearrange it.</p>
+    <h2>The week — what we're doing, and what you can vote on</h2>
+    <p>Each day has a confirmed anchor and a couple of open slots. Read, then react in the chat to register a preference.</p>
+
     <ol class="days">
       <li>
         <p class="day-date">Sat 30 May</p>
         <p class="day-title">Arrive</p>
-        <p>Lisbon airport, pick up the rental, A8 north. Stop in Caldas da Rainha for the Saturday market and a first cruise of the municipal park. In Lourinhã by sundown, dinner at one of the seafront places in Areia Branca.</p>
+        <p><strong>Confirmed:</strong> Lisbon airport pickups through the afternoon; convoy north on the A8. First night dinner at a seafront <em>marisqueira</em> in Praia da Areia Branca.</p>
+        <p class="day-open"><strong>Open:</strong> stopover in Caldas da Rainha for the Saturday market on the way up — vote in chat if you want to take the slow route.</p>
       </li>
       <li>
         <p class="day-date">Sun 31 May</p>
         <p class="day-title">Settle in</p>
-        <p>Walk the town, find the cafés, scout the street spots around the Câmara and the market. Easy session on the Areia Branca promenade in the morning before the wind.</p>
+        <p><strong>Confirmed:</strong> Morning roll on the Areia Branca promenade. Group lunch. Afternoon scout of the town's street spots and the Museu da Lourinhã if it's quieter than the beach.</p>
+        <p class="day-open"><strong>Open:</strong> sunset session at Praça da República, or sunset beers above the cliffs at Areia Branca. Vote.</p>
       </li>
       <li>
         <p class="day-date">Mon 1 Jun</p>
-        <p class="day-title">Peniche</p>
-        <p>Day trip. Skatepark da Papoa in the morning, lunch in town, lighthouse and Cabo Carvoeiro in the afternoon. Drive back along the coast road.</p>
+        <p class="day-title">First big day trip</p>
+        <p><strong>Confirmed:</strong> a day trip somewhere. Which one is your call.</p>
+        <p class="day-open"><strong>Vote in chat:</strong> Peniche · Caldas · Ericeira · Cascais.</p>
       </li>
       <li>
         <p class="day-date">Tue 2 Jun</p>
-        <p class="day-title">Local</p>
-        <p>Morning bowl session. Museu da Lourinhã in the afternoon (it really is good). Aguardente tasting at the cooperative if booked.</p>
+        <p class="day-title">Local + culture</p>
+        <p><strong>Confirmed:</strong> Morning bowl session (most-voted local park). Aguardente cooperative tasting in the afternoon for anyone interested.</p>
+        <p class="day-open"><strong>Open:</strong> evening dinner — long table at a fish place, or a smaller group dinner. Vote.</p>
       </li>
       <li>
         <p class="day-date">Wed 3 Jun</p>
-        <p class="day-title">Ericeira</p>
-        <p>Drive south, skate the park, eat fish, watch the surf at Ribeira d'Ilhas. Long day, worth it.</p>
+        <p class="day-title">Second day trip</p>
+        <p><strong>Confirmed:</strong> a second day trip, different from Monday's.</p>
+        <p class="day-open"><strong>Vote in chat</strong> from the remaining options.</p>
       </li>
       <li>
         <p class="day-date">Thu 4 Jun</p>
-        <p class="day-title">Rest / beach</p>
-        <p>Praia da Areia Branca or Porto Dinheiro. Body in the Atlantic. No board on land for a day.</p>
+        <p class="day-title">Rest, recover, eat</p>
+        <p><strong>Confirmed:</strong> No early start. Beach at Areia Branca or Porto Dinheiro. Long lunch. Optional museum or massage.</p>
+        <p class="day-open"><strong>Open:</strong> evening — group cook-up at the house, or out as a unit. Vote.</p>
       </li>
       <li>
         <p class="day-date">Fri 5 Jun</p>
-        <p class="day-title">Torres Vedras or Lisbon</p>
-        <p>Pick one, depending on energy. Lisbon if Jim wants the big‑city cruise; Torres Vedras for a quieter local session.</p>
+        <p class="day-title">Big finish</p>
+        <p><strong>Confirmed:</strong> The trip's biggest session. Probably Lisbon or back to Peniche for a second hit.</p>
+        <p class="day-open"><strong>Open:</strong> last-night dinner location. Vote.</p>
       </li>
       <li>
         <p class="day-date">Sat 6 Jun</p>
         <p class="day-title">Out</p>
-        <p>Slow morning, drive south, drop the rental, fly. Pastéis de nata at the airport are non‑negotiable.</p>
+        <p><strong>Confirmed:</strong> Slow morning, drive south to Lisbon, drop rentals, fly. Pastéis at the airport — non-negotiable.</p>
       </li>
     </ol>
   </div>
 </section>
 
-<section id="practical" class="band">
+<section id="food" class="band band--alt">
+  <div class="wrap">
+    <h2>Food, supplies, and where the night goes</h2>
+
+    <h3>Supermarkets in Lourinhã</h3>
+    <p>Three working assumptions, all reliable in this part of Portugal:</p>
+    <ul>
+      <li><strong>Pingo Doce</strong> — Portuguese chain, the everyday-shop choice. There's at least one in Lourinhã town.</li>
+      <li><strong>Lidl</strong> or <strong>Intermarché</strong> — usually on the edge of town, cheaper for bulk, drinks, snacks.</li>
+      <li><strong>Continente</strong> — the largest weekly-shop hypermarket in the region sits in Caldas da Rainha (30 min). Worth a single big trip on day one if the house is self-catering.</li>
+    </ul>
+    <p>Bread and pastries from a town <em>padaria</em>, fish straight off the boat in Peniche or São Martinho do Porto, fruit from any Tuesday/Saturday street market.</p>
+
+    <h3>Restaurants — what to order, not exactly where</h3>
+    <p>Specific names go out of date fast. Aim for the categories:</p>
+    <ul>
+      <li><strong>Marisqueira</strong> — shellfish house. Order the <em>arroz de marisco</em> (seafood rice) for the table; <em>percebes</em> (gooseneck barnacles) if you're brave.</li>
+      <li><strong>Casa de pasto</strong> — neighbourhood cantine. Daily fixed menu, €10–15, generous, no English. Lunch only, typically.</li>
+      <li><strong>Tasca</strong> — a wine-led small joint, often family-run. Petiscos (Portuguese tapas) and house wine.</li>
+      <li><strong>Churrasqueira</strong> — chicken on a grill, takeaway-friendly, group-friendly, cheap.</li>
+    </ul>
+    <p>Local specialities worth seeking: <em>caldeirada</em> (fish stew), <em>bacalhau à brás</em> (salt cod, eggs, potato), <em>polvo à lagareiro</em> (whole octopus with olive oil and potatoes), <em>sardinhas assadas</em> (grilled sardines, in season from June).</p>
+
+    <p class="aside">Add specific names you've eaten well at to the chat — that's how we'll build the gang's restaurant list in real time.</p>
+
+    <h3>Nightlife</h3>
+    <ul>
+      <li><strong>Praia da Areia Branca seafront</strong> — bars open until late through summer; mellow, mixed-age, drinks-with-a-view.</li>
+      <li><strong>Peniche</strong> — surf-bar culture, especially around the old town and the Baleal causeway.</li>
+      <li><strong>Ericeira</strong> — the busiest nightlife scene within easy reach; bars, occasional DJs, summer crowd.</li>
+      <li><strong>Caldas da Rainha</strong> — student town energy; quieter than the coast but a real bar scene.</li>
+      <li><strong>Lisbon — Bairro Alto and Cais do Sodré</strong> — if anyone fancies a proper big-city night; book a designated driver or a hotel.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="phrases" class="band">
+  <div class="wrap">
+    <h2>Portuguese, for skating and for getting out of trouble</h2>
+    <p>Portuguese isn't Spanish. The vowels swallow themselves, the <em>ão</em> sound is a nasal bagpipe, and most locals will be patient with you for trying. A handful of these will buy you a lot of goodwill.</p>
+
+    <h3>The unavoidables</h3>
+    <table class="phrasebook">
+      <tr><td><strong>Olá</strong></td><td>Hello</td></tr>
+      <tr><td><strong>Bom dia / Boa tarde / Boa noite</strong></td><td>Good morning / afternoon / evening</td></tr>
+      <tr><td><strong>Obrigado</strong> (men) / <strong>Obrigada</strong> (women)</td><td>Thank you — the ending matches who's saying it, not who you're thanking</td></tr>
+      <tr><td><strong>Por favor</strong></td><td>Please</td></tr>
+      <tr><td><strong>Desculpe</strong></td><td>Sorry / excuse me</td></tr>
+      <tr><td><strong>Fala inglês?</strong></td><td>Do you speak English?</td></tr>
+      <tr><td><strong>A conta, por favor</strong></td><td>The bill, please</td></tr>
+      <tr><td><strong>Duas cervejas, por favor</strong></td><td>Two beers, please (use <em>uma</em> for one, <em>três</em> for three, etc.)</td></tr>
+      <tr><td><strong>Saúde!</strong></td><td>Cheers</td></tr>
+    </table>
+
+    <h3>Actually useful for skating</h3>
+    <table class="phrasebook">
+      <tr><td><strong>Onde fica a pista de skate?</strong></td><td>Where's the skatepark?</td></tr>
+      <tr><td><strong>Podemos andar de skate aqui?</strong></td><td>Can we skate here?</td></tr>
+      <tr><td><strong>Sabe um sítio bom para andar?</strong></td><td>Do you know a good spot to skate?</td></tr>
+      <tr><td><strong>O chão é liso?</strong></td><td>Is the surface smooth?</td></tr>
+      <tr><td><strong>Onde compro um skate / rodas / lixa?</strong></td><td>Where can I buy a board / wheels / griptape?</td></tr>
+      <tr><td><strong>Foi brutal!</strong></td><td>That was sick! (genuine compliment, locals use it too)</td></tr>
+      <tr><td><strong>Estou bem.</strong></td><td>I'm fine. (Says the person on the floor.)</td></tr>
+    </table>
+
+    <h3>Phrases that buy time when something has gone wrong</h3>
+    <table class="phrasebook">
+      <tr><td><strong>Desculpe, foi sem querer.</strong></td><td>Sorry, it wasn't on purpose.</td></tr>
+      <tr><td><strong>Desculpe a parede, foi o vento.</strong></td><td>Sorry about the wall, it was the wind.</td></tr>
+      <tr><td><strong>Pago já.</strong></td><td>I'll pay right now. (Magic words.)</td></tr>
+      <tr><td><strong>Já vamos embora, prometo.</strong></td><td>We're leaving right now, I promise.</td></tr>
+      <tr><td><strong>Não sou eu o líder, é aquele.</strong></td><td>I'm not the leader, he is. <em>(Point at the most innocent member of the group.)</em></td></tr>
+      <tr><td><strong>Precisamos de gelo. Para o joelho, não para a bebida.</strong></td><td>We need ice. For the knee, not the drink.</td></tr>
+      <tr><td><strong>Já morreu alguém neste corrimão?</strong></td><td>Has anyone died on this rail?</td></tr>
+      <tr><td><strong>O segurança é rápido?</strong></td><td>Is the security guard fast?</td></tr>
+      <tr><td><strong>Somos vinte e um. Faltam dois.</strong></td><td>There are twenty-one of us. Two are missing.</td></tr>
+      <tr><td><strong>O meu amigo diz que está bem, mas não está.</strong></td><td>My friend says he's fine, but he's not.</td></tr>
+      <tr><td><strong>Mais duas, e uma para o motorista que não bebe.</strong></td><td>Two more, and one for the driver who isn't drinking.</td></tr>
+      <tr><td><strong>Para onde vai a noite depois da meia-noite?</strong></td><td>Where does the night go after midnight?</td></tr>
+    </table>
+
+    <p class="aside">Pronunciation tip the size of a postcard: Portuguese eats final vowels and slurs unstressed ones. <em>Obrigado</em> sounds closer to <em>brigadu</em>. <em>Está</em> sounds like <em>shtah</em>. Lean into it, don't enunciate, and you'll sound less like a tourist.</p>
+  </div>
+</section>
+
+<section id="practical" class="band band--alt">
   <div class="wrap">
     <h2>Practical bits</h2>
     <div class="grid">
       <div>
         <h3>Getting there</h3>
-        <p>Fly Lisbon (LIS). A8 motorway north, roughly an hour to Lourinhã. Renting a car is the right move — buses exist but eat the day. Toll roads use an electronic transponder; the rental desk will sort it.</p>
+        <p>Fly Lisbon (LIS). A8 motorway north, around an hour. Rent a car between two or three of you — public transport burns the day. The motorway uses an electronic toll transponder; the rental desk will sort it.</p>
       </div>
       <div>
-        <h3>Weather, late May / early June</h3>
-        <p>Mid‑20s °C, occasional cloud, mostly dry, reliably windy after lunch. Pack a sweatshirt for the evening — the Atlantic cools things off quickly once the sun drops.</p>
+        <h3>Weather</h3>
+        <p>Late May / early June: mid-20s °C, mostly dry, some cloud, reliably windy after lunch. Layer for the evening — the Atlantic cools things off quickly.</p>
       </div>
       <div>
-        <h3>Language</h3>
-        <p>Portuguese. English is fine in surf and skate shops and at most restaurants in Areia Branca. Inland and in smaller cafés, a handful of words goes a long way: <em>obrigado, bom dia, uma bica se faz favor</em>.</p>
+        <h3>Money &amp; plugs</h3>
+        <p>Euros. Cards work nearly everywhere. Keep €30 in cash for small bars and markets. Plugs are Type F (the European two round pins).</p>
       </div>
       <div>
-        <h3>Money & plugs</h3>
-        <p>Euros. Cards work almost everywhere, but keep €30 in cash for markets and small cafés. Plugs are Type F (the European two‑round‑pin).</p>
-      </div>
-      <div>
-        <h3>Eat</h3>
-        <p>Grilled fish at any <em>marisqueira</em> on the seafront. <em>Caldeirada</em> if the day is cold. <em>Travesseiros</em> from Sintra if Jim swings that way on the Ericeira day. And the local aguardente, once.</p>
+        <h3>Emergencies</h3>
+        <p><strong>112</strong> is the all-services number (police, ambulance, fire). English is understood. The hospital is in Caldas da Rainha; local health centre in Lourinhã.</p>
       </div>
       <div>
         <h3>Pads</h3>
-        <p>Bring them. The bowls on this coast are concrete, the medical system is fine but you'd rather not test it on holiday.</p>
+        <p>Bring them. Concrete bowls and Atlantic salt damp are an unforgiving combination, and the medical system is good but you'd rather not test it.</p>
       </div>
+      <div>
+        <h3>Group comms</h3>
+        <p>A WhatsApp / Signal group should be circulating before arrival. If you're not in it yet, post your number in the chat below and someone will pull you in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="chat" class="band">
+  <div class="wrap">
+    <h2>Chat, intros and votes</h2>
+    <p>This is the lobby. Two minutes of setup the first time (sign in with GitHub, that's it), then everything below is real — comments persist, reactions count as votes, the gang sees them all.</p>
+    <p>Conventions:</p>
+    <ul>
+      <li>Post one comment to introduce yourself.</li>
+      <li>For votes, find the pinned comment that frames the question and react with <strong>👍</strong>. The most-reacted option wins.</li>
+      <li>Tip the comment box generously with photos and tip-offs through the week.</li>
+    </ul>
+
+    <div id="giscus-mount" class="giscus-mount">
+      <div class="giscus-placeholder" id="giscus-placeholder">
+        <p><strong>Comments come online once giscus is wired up.</strong></p>
+        <p>Five-minute setup, one-time only:</p>
+        <ol>
+          <li>On GitHub: <strong>Settings → General → Features → Discussions</strong> (enable).</li>
+          <li>Install the <a href="https://github.com/apps/giscus" rel="noopener">giscus app</a> on this repo.</li>
+          <li>Visit <a href="https://giscus.app" rel="noopener">giscus.app</a>, paste the repo name (<code>silkyrich/Lourinha</code>), pick the <em>General</em> Discussion category, and copy the two IDs it generates (<code>data-repo-id</code> and <code>data-category-id</code>).</li>
+          <li>Paste them into the <code>&lt;script&gt;</code> at the bottom of <code>index.html</code> in place of the <code>REPLACE_ME</code> values, commit, and the box lights up.</li>
+        </ol>
+      </div>
+      <script src="https://giscus.app/client.js"
+              data-repo="silkyrich/Lourinha"
+              data-repo-id="REPLACE_ME"
+              data-category="General"
+              data-category-id="REPLACE_ME"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="light"
+              data-lang="en"
+              data-loading="lazy"
+              crossorigin="anonymous"
+              async>
+      </script>
     </div>
   </div>
 </section>
@@ -196,9 +527,64 @@
 
 <footer>
   <div class="wrap">
-    <p>Made for Jim. Have a good one.</p>
+    <p>Made for Jim and twenty strangers. See you on the coast.</p>
   </div>
 </footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+<script src="map.js"></script>
+<script>
+  // Mobile nav toggle
+  (function () {
+    var btn = document.querySelector('.topnav-toggle');
+    var links = document.getElementById('topnav-links');
+    if (!btn || !links) return;
+    btn.addEventListener('click', function () {
+      var open = links.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    links.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        links.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+
+  // Subtle reveal on scroll
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var els = document.querySelectorAll('.band, .spot, .card, .days li');
+    els.forEach(function (el) { el.classList.add('reveal'); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+<script>
+  // Hide the giscus setup placeholder once the real widget appears.
+  (function () {
+    var mount = document.getElementById('giscus-mount');
+    var placeholder = document.getElementById('giscus-placeholder');
+    if (!mount || !placeholder || !('MutationObserver' in window)) return;
+    var mo = new MutationObserver(function () {
+      if (mount.querySelector('.giscus-frame, .giscus iframe')) {
+        placeholder.style.display = 'none';
+        mo.disconnect();
+      }
+    });
+    mo.observe(mount, { childList: true, subtree: true });
+  })();
+</script>
 
 </body>
 </html>
