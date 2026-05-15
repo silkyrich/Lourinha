@@ -1,4 +1,3 @@
-import Splash from './components/Splash'
 import TopNav from './components/TopNav'
 import Hero from './components/Hero'
 import Marquee from './components/Marquee'
@@ -17,7 +16,6 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <>
-      <Splash />
       <TopNav />
       <main>
         <Hero />

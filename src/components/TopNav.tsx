@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useTeam } from '../lib/team'
 
 const links = [
   { href: '#welcome', label: 'Welcome' },
@@ -14,7 +13,6 @@ const links = [
 ]
 
 export default function TopNav() {
-  const { team, toggleTeam } = useTeam()
   const [open, setOpen] = useState(false)
 
   return (
@@ -29,17 +27,6 @@ export default function TopNav() {
           </span>
           <span>Skate Strong</span>
         </a>
-
-        <button
-          className="team-toggle"
-          type="button"
-          aria-label="Switch team"
-          onClick={toggleTeam}
-        >
-          <span className="team-toggle-label">Team</span>
-          <span className="team-toggle-value">{team === 'skate' ? 'Skate' : 'Skateboard'}</span>
-          <span className="team-toggle-arrow" aria-hidden="true">⇄</span>
-        </button>
 
         <button
           className="topnav-toggle"

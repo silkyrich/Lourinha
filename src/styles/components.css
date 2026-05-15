@@ -1,114 +1,4 @@
 /* ============================================================
-   SPLASH
-   ============================================================ */
-.splash {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: rgba(0,0,0,0.78);
-  backdrop-filter: blur(14px) saturate(120%);
-}
-
-.splash-bg {
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(circle at 20% 20%, color-mix(in oklab, var(--accent), transparent 40%), transparent 55%),
-    radial-gradient(circle at 80% 75%, color-mix(in oklab, var(--accent-2), transparent 60%), transparent 55%);
-  filter: blur(80px);
-  opacity: 0.65;
-}
-
-.splash-card {
-  position: relative;
-  max-width: 760px;
-  width: 100%;
-  padding: 56px 48px;
-  background: var(--bg-elev);
-  color: var(--fg);
-  border: 1px solid var(--line);
-  border-radius: var(--r-lg);
-  box-shadow: var(--shadow-lg);
-  text-align: center;
-}
-
-.splash-eyebrow { margin: 0 0 14px; }
-
-.splash-title {
-  font-size: clamp(38px, 5.5vw, 64px);
-  margin: 0 0 10px;
-}
-
-.splash-sub {
-  color: var(--fg-soft);
-  margin: 0 0 32px;
-  font-size: 17px;
-}
-
-.splash-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-@media (max-width: 540px) {
-  .splash-card { padding: 40px 24px; }
-  .splash-grid { grid-template-columns: 1fr; }
-}
-
-.splash-pick {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 28px 18px;
-  background: var(--bg-elev-2);
-  color: var(--fg);
-  border: 1px solid var(--line);
-  border-radius: var(--r);
-  cursor: pointer;
-  font-family: 'Inter', sans-serif;
-  transition: border-color 0.2s, transform 0.2s, background 0.2s;
-}
-
-.splash-pick:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent);
-  background: var(--bg-elev);
-}
-
-.splash-pick-icon { display: inline-flex; width: 80px; color: var(--accent); margin-bottom: 6px; }
-.splash-pick-name { font-size: 20px; font-weight: 800; letter-spacing: -0.01em; }
-.splash-pick-vibe {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--fg-faint);
-  font-weight: 600;
-}
-
-.splash-fine {
-  margin: 28px 0 0;
-  font-size: 13px;
-  color: var(--fg-faint);
-}
-
-.splash-skip {
-  background: none;
-  border: none;
-  color: var(--fg-faint);
-  text-decoration: underline;
-  font: inherit;
-  font-size: 13px;
-  cursor: pointer;
-  padding: 4px 8px;
-}
-
-
-/* ============================================================
    TOP NAV
    ============================================================ */
 .topnav {
@@ -150,31 +40,8 @@
 
 .topnav-brand:hover .brand-mark { transform: rotate(120deg); }
 
-.team-toggle {
-  margin-left: auto;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  background: transparent;
-  border: 1px solid var(--line-strong);
-  border-radius: 999px;
-  color: var(--fg);
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: border-color 0.2s, transform 0.15s;
-}
-
-.team-toggle:hover { border-color: var(--accent); transform: translateY(-1px); }
-
-.team-toggle-label { color: var(--fg-faint); }
-.team-toggle-value { color: var(--accent); font-weight: 700; }
-.team-toggle-arrow { opacity: 0.55; }
-
 .topnav-toggle {
+  margin-left: auto;
   background: transparent;
   border: 1px solid var(--line-strong);
   border-radius: 6px;
@@ -189,7 +56,8 @@
 
 .topnav-links {
   list-style: none;
-  margin: 0; padding: 0;
+  margin: 0 0 0 auto;
+  padding: 0;
   display: flex;
   gap: 2px;
   flex-wrap: wrap;
@@ -255,12 +123,6 @@
 .hero-tint {
   position: absolute; inset: 0;
   z-index: -1;
-  background:
-    linear-gradient(180deg, transparent 30%, var(--hero-tint) 70%, var(--bg) 100%),
-    linear-gradient(0deg, transparent 60%, color-mix(in oklab, var(--bg), transparent 40%) 100%);
-}
-
-[data-team="skateboard"] .hero-tint {
   background:
     linear-gradient(180deg, rgba(10,10,10,0.0) 0%, rgba(10,10,10,0.35) 50%, rgba(10,10,10,1) 100%),
     radial-gradient(circle at 80% 20%, rgba(255,69,0,0.20), transparent 50%);
@@ -556,8 +418,6 @@
   color: white;
   padding: 36px 0;
 }
-
-[data-team="skate"] .calendar-strip { background: var(--bg-inverse); color: var(--fg-inverse); }
 
 .calendar-strip-inner {
   display: flex;

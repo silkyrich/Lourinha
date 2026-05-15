@@ -1,11 +1,8 @@
 /* ============================================================
-   THEME VARIABLES
-   Team Skateboard (default): near-black Nike-tier dark mode + orange.
-   Team Skate (rollers): cream + hot pink + cyan retro roller-disco.
+   THEME VARIABLES — single dark Nike-tier palette
    ============================================================ */
 
-:root,
-[data-team="skateboard"] {
+:root {
   /* surfaces */
   --bg:           #0a0a0a;
   --bg-elev:      #111111;
@@ -40,31 +37,4 @@
   --r-lg:         20px;
 
   --hero-tint:    rgba(0,0,0,0.55);
-}
-
-[data-team="skate"] {
-  --bg:           #fef0e8;
-  --bg-elev:      #ffffff;
-  --bg-elev-2:    #fff7f1;
-  --bg-inverse:   #1a0033;
-
-  --fg:           #1a0033;
-  --fg-soft:      #4d3a66;
-  --fg-faint:     #7e6a8f;
-  --fg-inverse:   #ffffff;
-
-  --line:         #f0d6cc;
-  --line-strong:  #e0bdb0;
-
-  --accent:       #ff2d8a;
-  --accent-soft:  #ff8fb8;
-  --accent-deep:  #c4216a;
-  --accent-2:     #00d4ff;
-  --accent-3:     #5a8ad6;
-
-  --shadow-sm:    0 1px 2px rgba(95,30,80,0.06);
-  --shadow:       0 12px 32px rgba(95,30,80,0.10);
-  --shadow-lg:    0 24px 60px rgba(95,30,80,0.18);
-
-  --hero-tint:    rgba(255,45,138,0.22);
 }

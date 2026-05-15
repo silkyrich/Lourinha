@@ -25,35 +25,23 @@ setup: **Settings → Pages → Source → GitHub Actions**.
 
 | Placeholder | Where | What to do |
 |---|---|---|
-| Hero image | `src/components/Hero.tsx` | Replace the picsum URL with a real Lourinhã / skate shot |
+| Hero image | `src/components/Hero.tsx` | Currently an Unsplash pink-roller-skates shot (Sven Brandsma, free for commercial use). Swap for a real Lourinhã / Skate Strong photo when you have one. |
 | Host photo | `src/components/Welcome.tsx` | Replace the picsum URL with Cez's portrait |
 | Spot photos | `src/data/spots.ts` `photoSeed` | Each seed feeds a picsum URL; swap for real photos |
 | Album photos | `src/components/Album.tsx` `seeds` | Same pattern |
 | Album link | `src/components/Album.tsx` `#album-link` href | Paste Google Photos / Drive share URL |
 | Brand colours | `src/styles/themes.css` | Adjust `--accent`, `--bg`, etc. once Skate Strong's palette is shared |
 
-## Two-team theming
-
-The splash modal on first visit asks which team you're on:
-
-- **Team Skateboard** — dark mode (near-black), orange accent. Default.
-- **Team Skate** — light mode (warm cream), hot-pink/cyan accent.
-
-The choice persists in `localStorage` under `skatestrong.team`. A toggle
-in the nav swaps teams at any time. Theme vars live in
-`src/styles/themes.css` on `[data-team="skateboard"]` and
-`[data-team="skate"]`. Adding a third team is a copy/paste.
-
 ## Project layout
 
 ```
 src/
-  components/   one file per section + Splash, TopNav, Hero, Footer
+  components/   one file per section + TopNav, Hero, Footer
   data/         spots, phrases, area cards, todo items, practical bits
-  lib/          team context + Reveal animation helper
-  styles/       global, themes (per-team CSS variables), components
+  lib/          Reveal animation helper
+  styles/       global, themes (CSS variables), components
   App.tsx       composes the page
-  main.tsx      React + TeamProvider boot
+  main.tsx      React boot
 public/
   lourinha-2026.ics
 ```

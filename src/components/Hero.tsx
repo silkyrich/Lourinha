@@ -21,8 +21,9 @@ export default function Hero() {
   return (
     <header id="top" className="hero" ref={ref}>
       <motion.div className="hero-photo" style={{ y, scale }} aria-hidden="true">
+        {/* "A pair of pink roller skates" by Sven Brandsma — Unsplash. Free for commercial use. */}
         <img
-          src="https://picsum.photos/seed/lourinha-hero-strong/2200/1400"
+          src="https://images.unsplash.com/photo-1554704674-8d3bd5e18b55?w=2400&q=80&auto=format&fit=crop"
           alt=""
           loading="eager"
         />
