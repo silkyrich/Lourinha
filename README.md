@@ -6,10 +6,14 @@ A small static site for Jim's skating week in Lourinhã, Portugal (30 May – 6 
 
 ## Hosting on GitHub Pages
 
-In the repo on GitHub: **Settings → Pages → Build and deployment**, set
-**Source** to *Deploy from a branch*, pick the branch you want live, and
-**/ (root)** as the folder. The site will be served at
-`https://<owner>.github.io/<repo>/`.
+Deployed by GitHub Actions (`.github/workflows/pages.yml`) on every
+push to `main`. One-time setup in the GitHub UI:
+
+**Settings → Pages → Build and deployment → Source**: select
+**GitHub Actions**.
+
+The workflow then publishes the repo root to
+`https://<owner>.github.io/<repo>/` on each push.
 
 ## Local preview
 
