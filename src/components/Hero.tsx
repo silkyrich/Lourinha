@@ -76,11 +76,11 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
-          <a className="btn btn--primary" href="#chat">
-            Say hello to the crew <span className="btn-arrow">→</span>
-          </a>
-          <a className="btn btn--ghost" href={calendarUrl} target="_blank" rel="noopener">
+          <a className="btn btn--primary" href={calendarUrl} target="_blank" rel="noopener">
             Add to calendar <span className="btn-arrow">→</span>
+          </a>
+          <a className="btn btn--ghost" href="#map">
+            Open the map <span className="btn-arrow">→</span>
           </a>
         </motion.div>
       </div>

@@ -10,7 +10,7 @@ const links = [
   { href: '#food', label: 'Food' },
   { href: '#phrases', label: 'Portuguese' },
   { href: '#album', label: 'Album' },
-  { href: '#chat', label: 'Chat' },
+  { href: '#practical', label: 'Practical' },
 ]
 
 export default function TopNav() {

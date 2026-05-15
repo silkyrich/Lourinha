@@ -12,7 +12,6 @@ import Food from './components/Food'
 import Phrases from './components/Phrases'
 import Album from './components/Album'
 import Practical from './components/Practical'
-import Chat from './components/Chat'
 import Footer from './components/Footer'
 
 export default function App() {
@@ -33,7 +32,6 @@ export default function App() {
         <Phrases />
         <Album />
         <Practical />
-        <Chat />
       </main>
       <Footer />
     </>

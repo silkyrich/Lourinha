@@ -4,9 +4,9 @@ import SectionHeader from './SectionHeader'
 const bullets = [
   { strong: 'Map', tail: '— the spots, towns and supermarkets that matter.' },
   { strong: 'Recommendations', tail: '— skate surfaces, scenic drives, restaurants, sights, sorted so you can build your own week.' },
-  { strong: 'Chat', tail: '— introductions and votes via the GitHub-backed chat at the bottom.' },
   { strong: 'Shared album', tail: '— one Google Photos album for the week.' },
   { strong: 'Portuguese', tail: '— enough to keep you out of trouble.' },
+  { strong: 'Practical', tail: '— how to get there, weather, emergency numbers, the rest.' },
 ]
 
 export default function Welcome() {
@@ -22,7 +22,7 @@ export default function Welcome() {
         <div className="welcome-grid">
           <Reveal className="welcome-body">
             <p>
-              Cez put this week together — the house, the dates, the shape of it. She'll be at the airport, on the coast, and at every dinner. Twenty of you are in the group because <strong>she handpicked who'd be in the room</strong>. None of this is a random booking and you are not on your own: she's running it, she's there for it, and this page is the lobby where the rest of the plan gets made — by the gang, with her steering.
+              Cez put this week together — the house, the dates, the shape of it. She'll be at the airport, on the coast, and at every dinner. Twenty of you are in the group because <strong>she handpicked who'd be in the room</strong>. None of this is a random booking and you are not on your own: she's running it, she's there for it, and this page is the briefing. The rest of the plan gets made in the WhatsApp group, with Cez steering.
             </p>
 
             <ul className="welcome-list">

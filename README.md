@@ -31,7 +31,6 @@ setup: **Settings → Pages → Source → GitHub Actions**.
 | Album photos | `src/components/Album.tsx` `seeds` | Same pattern |
 | Album link | `src/components/Album.tsx` `#album-link` href | Paste Google Photos / Drive share URL |
 | Brand colours | `src/styles/themes.css` | Adjust `--accent`, `--bg`, etc. once Skate Strong's palette is shared |
-| giscus IDs | `src/components/Chat.tsx` `GISCUS_REPO_ID`, `GISCUS_CATEGORY_ID` | See *Wiring up giscus* below |
 
 ## Two-team theming
 
@@ -44,23 +43,6 @@ The choice persists in `localStorage` under `skatestrong.team`. A toggle
 in the nav swaps teams at any time. Theme vars live in
 `src/styles/themes.css` on `[data-team="skateboard"]` and
 `[data-team="skate"]`. Adding a third team is a copy/paste.
-
-## Wiring up giscus (chat + votes)
-
-Comments and reactions use [giscus](https://giscus.app), backed by GitHub
-Discussions. One-time setup:
-
-1. **Enable Discussions**: *Settings → General → Features → Discussions*.
-2. **Install the giscus app**: <https://github.com/apps/giscus>.
-3. Visit <https://giscus.app>, paste `silkyrich/Lourinha`, pick the
-   `General` Discussion category, enable reactions. The page emits:
-   - `data-repo-id`
-   - `data-category-id`
-4. Open `src/components/Chat.tsx`, set the two constants at the top of
-   the file. Commit, push.
-
-Until those are filled in, the chat section renders a placeholder with
-these same instructions.
 
 ## Project layout
 

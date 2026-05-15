@@ -43,5 +43,5 @@ export const practical: Practical[] = [
   { title: 'Money & plugs', body: 'Euros. Cards work everywhere. €30 in cash for markets and small bars. Plugs Type F.' },
   { title: 'Emergencies', body: '112 — all services. English is understood. Hospital in Caldas da Rainha; health centre in Lourinhã.' },
   { title: 'Pads', body: 'Bring them. Concrete bowls and Atlantic salt damp are unforgiving.' },
-  { title: 'Group comms', body: 'A WhatsApp / Signal group circulates before arrival. Post your number in the chat if you\'re not in it yet.' },
+  { title: 'Group comms', body: 'The WhatsApp group is where the week is run day-to-day — votes, where we\'re eating, who\'s skating what. Cez will pull you in if you\'re not already.' },
 ]
