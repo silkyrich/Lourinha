@@ -1,46 +1,67 @@
-# Lourinhã 2026
+# Lourinhã 2026 — Cez Skates
 
-Trip HQ for Jim and twenty others, week of 30 May – 6 June 2026.
+Official trip HQ for Cez's Lourinhã week, 30 May – 6 June 2026.
 
-Static site, no build step. Three files do the work:
+Static site, no build step. Files:
 
 - `index.html` — content
-- `styles.css` — styling
-- `map.js` — Leaflet map of spots, towns, food and scenic stops
+- `styles.css` — theme variables + layout
+- `map.js` — Leaflet map (with "Open in Google Maps" deep links)
+- `theme.js` — splash modal, team switcher, scroll reveal
+- `lourinha-2026.ics` — calendar file (alongside the Google Calendar
+  add link in the hero / bumper strip)
+
+## Things to swap before the site goes out
+
+These are the placeholders the build leaves behind for Cez/you to
+fill in:
+
+| Placeholder | Where | What to do |
+|---|---|---|
+| Brand name `Cez Skates` | `index.html`, `README.md`, `lourinha-2026.ics` | Find-replace to the real company name |
+| Host photo | `index.html` `.host-photo img` | Swap the Picsum URL for a real portrait |
+| Hero image | `index.html` `.hero-photo img` | Swap for a real Lourinhã / skate shot |
+| Spot photos | `index.html` each `.spot-photo img` | Swap each Picsum URL for a real shot of the spot |
+| Shared photo album | `index.html` `#album-link` href | Paste the Google Photos / Drive album share link |
+| giscus IDs | `index.html` `<script>` near `#chat` | See *Wiring up giscus* below |
+
+Every placeholder uses Picsum (Unsplash-curated stock) so the page
+looks complete out of the box.
+
+## The team picker
+
+On first visit, a splash modal asks the visitor to pick **Team
+Skateboard** (orange/black, gritty street) or **Team Skate** (pink/
+teal, retro roller-disco). The choice persists in `localStorage`
+under `cez.team` and switches the whole palette. A toggle in the
+nav swaps teams at any time.
+
+Themes live on `[data-team="skateboard"]` and `[data-team="skate"]`
+in `styles.css` — both override the same CSS custom properties, so
+adding a third team is a copy/paste away.
 
 ## Hosting on GitHub Pages
 
-Deployed by GitHub Actions (`.github/workflows/pages.yml`) on every push
-to `main`. One-time setup: **Settings → Pages → Source → GitHub Actions**.
+Deployed by GitHub Actions (`.github/workflows/pages.yml`) on every
+push to `main`. One-time setup: **Settings → Pages → Source →
+GitHub Actions**.
 
-## Wiring up comments and votes (giscus)
+## Wiring up giscus
 
-The chat / vote section at the bottom of the page uses
-[giscus](https://giscus.app), which stores comments as GitHub
-Discussions on this repo. Setup is one-time, ~5 minutes:
+The chat / vote section uses [giscus](https://giscus.app), backed by
+GitHub Discussions. One-time setup, ~5 minutes:
 
-1. **Enable Discussions** on the repo:
-   *Settings → General → Features → Discussions.*
-2. **Install the giscus app** on this repo:
-   <https://github.com/apps/giscus> → *Install* → select `silkyrich/Lourinha`.
-3. Visit <https://giscus.app>. Paste `silkyrich/Lourinha` as the repo,
-   pick `pathname` as the mapping, pick the `General` Discussion
-   category, and enable reactions. The page generates two values:
+1. **Enable Discussions**: *Settings → General → Features → Discussions.*
+2. **Install the giscus app**: <https://github.com/apps/giscus>.
+3. Visit <https://giscus.app>, paste `silkyrich/Lourinha`, pick the
+   `General` Discussion category, enable reactions, and copy:
    - `data-repo-id`
    - `data-category-id`
-4. Open `index.html`, find the giscus `<script>` near the bottom, and
-   replace the two `REPLACE_ME` placeholders. Commit, push. The chat
-   box lights up.
+4. Paste them into the giscus `<script>` in `index.html` in place of
+   the two `REPLACE_ME` values. Commit, push.
 
-Until those IDs are filled in, the chat area renders a placeholder
-explaining the steps — nothing breaks.
-
-## Conventions for votes
-
-- One comment per option for any multi-choice vote (day trips,
-  dinner, etc.).
-- Voters react with 👍 on the option they want. Most reactions wins.
-- Decisions get pinned in the Discussion so latecomers can scroll up.
+Until those are filled in, the chat section shows a self-explaining
+placeholder.
 
 ## Local preview
 

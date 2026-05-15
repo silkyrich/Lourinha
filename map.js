@@ -67,9 +67,12 @@
 
   pins.forEach(function (p) {
     var s = styles[p.cat];
+    var gmaps = 'https://www.google.com/maps/search/?api=1&query=' + p.lat + ',' + p.lng;
+    var popup = '<strong>' + p.name + '</strong><br>' + p.blurb +
+      '<br><a href="' + gmaps + '" target="_blank" rel="noopener" style="font-weight:700;">Open in Google Maps →</a>';
     var marker = L.circleMarker([p.lat, p.lng], {
       color: s.color, fillColor: s.fillColor, fillOpacity: 0.85, weight: 2, radius: s.radius
-    }).bindPopup('<strong>' + p.name + '</strong><br>' + p.blurb);
+    }).bindPopup(popup);
     marker.addTo(groups[p.cat]);
   });
 
