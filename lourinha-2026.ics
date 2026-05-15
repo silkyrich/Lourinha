@@ -1,6 +1,6 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Cez Skates//Lourinha 2026//EN
+PRODID:-//Skate Strong//Lourinha 2026//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
@@ -8,8 +8,8 @@ UID:lourinha-2026-cezskates@silkyrich.github.io
 DTSTAMP:20260101T000000Z
 DTSTART;VALUE=DATE:20260530
 DTEND;VALUE=DATE:20260607
-SUMMARY:Lourinha with Cez Skates
-DESCRIPTION:The official Cez Skates trip to Lourinha\, Portugal.\nhttps://silkyrich.github.io/Lourinha/
+SUMMARY:Lourinha with Skate Strong
+DESCRIPTION:The official Skate Strong trip to Lourinha\, Portugal.\nhttps://silkyrich.github.io/Lourinha/
 LOCATION:Lourinha\, Portugal
 STATUS:CONFIRMED
 TRANSP:OPAQUE

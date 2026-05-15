@@ -1,4 +1,4 @@
-# Lourinhã 2026 — Cez Skates
+# Lourinhã 2026 — Skate Strong
 
 Official trip HQ for Cez's Lourinhã week, 30 May – 6 June 2026.
 
@@ -18,7 +18,7 @@ fill in:
 
 | Placeholder | Where | What to do |
 |---|---|---|
-| Brand name `Cez Skates` | `index.html`, `README.md`, `lourinha-2026.ics` | Find-replace to the real company name |
+| Brand logo / colours | `styles.css` (`--accent`, brand SVG in `index.html`) | Swap in Skate Strong's real palette and logo once shared |
 | Host photo | `index.html` `.host-photo img` | Swap the Picsum URL for a real portrait |
 | Hero image | `index.html` `.hero-photo img` | Swap for a real Lourinhã / skate shot |
 | Spot photos | `index.html` each `.spot-photo img` | Swap each Picsum URL for a real shot of the spot |
