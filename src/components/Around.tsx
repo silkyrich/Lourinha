@@ -16,9 +16,14 @@ export default function Around() {
         <div className="area-grid">
           {areaCards.map((c, i) => (
             <Reveal as="article" className="area-card" key={c.title} delay={i * 0.05}>
-              <h4>{c.title}</h4>
-              <p>{c.body}</p>
-              <p className="area-card-meta">{c.meta}</p>
+              <div className="area-card-photo">
+                <img loading="lazy" src={`${import.meta.env.BASE_URL}img/${c.photo}.jpg`} alt="" />
+              </div>
+              <div className="area-card-body">
+                <h4>{c.title}</h4>
+                <p>{c.body}</p>
+                <p className="area-card-meta">{c.meta}</p>
+              </div>
             </Reveal>
           ))}
         </div>

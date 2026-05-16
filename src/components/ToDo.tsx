@@ -7,7 +7,7 @@ export default function ToDo() {
     <section id="do" className="section">
       <div className="wrap">
         <SectionHeader
-          num="05"
+          num="06"
           eyebrow="Worth a day"
           title="The week's menu."
           lede="No fixed plan. These are the things worth one of your eight days — pick, combine, vote in the chat."

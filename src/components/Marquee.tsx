@@ -4,7 +4,7 @@ const items = [
   'Skate Strong',
   '30.05 — 06.06.26',
   'Atlantic coast',
-  'Twenty-one of us',
+  'Fifteen of us',
   'Skate · See · Eat · Rest',
 ]
 

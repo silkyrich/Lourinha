@@ -7,7 +7,7 @@ export default function Phrases() {
     <section id="phrases" className="section">
       <div className="wrap">
         <SectionHeader
-          num="07"
+          num="08"
           eyebrow="Get yourself out of trouble"
           title="Portuguese, for skating and for the rest."
           lede="Portuguese isn't Spanish. The vowels swallow themselves; locals will be patient with anyone who tries. Obrigado sounds closer to brigadu, está sounds like shtah. Lean in."

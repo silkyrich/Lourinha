@@ -26,7 +26,7 @@ setup: **Settings → Pages → Source → GitHub Actions**.
 | Placeholder | Where | What to do |
 |---|---|---|
 | Hero image | `src/components/Hero.tsx` | Currently an Unsplash pink-roller-skates shot (Sven Brandsma, free for commercial use). Swap for a real Lourinhã / Skate Strong photo when you have one. |
-| Host photo | `src/components/Welcome.tsx` | Replace the picsum URL with Cez's portrait |
+| Host photo | `src/components/Welcome.tsx` | Replace the picsum URL with Kes's portrait |
 | Spot photos | `src/data/spots.ts` `photoSeed` | Each seed feeds a picsum URL; swap for real photos |
 | Album photos | `src/components/Album.tsx` `seeds` | Same pattern |
 | Album link | `src/components/Album.tsx` `#album-link` href | Paste Google Photos / Drive share URL |

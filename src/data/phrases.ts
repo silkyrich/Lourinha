@@ -41,7 +41,7 @@ export const phraseSets: PhraseSet[] = [
       { pt: 'Precisamos de gelo. Para o joelho, não para a bebida.', en: 'We need ice. For the knee, not the drink.' },
       { pt: 'Já morreu alguém neste corrimão?', en: 'Has anyone died on this rail?' },
       { pt: 'O segurança é rápido?', en: 'Is the security guard fast?' },
-      { pt: 'Somos vinte e um. Faltam dois.', en: 'There are twenty-one of us. Two are missing.' },
+      { pt: 'Somos quinze. Faltam dois.', en: 'There are fifteen of us. Two are missing.' },
       { pt: 'O meu amigo diz que está bem, mas não está.', en: 'My friend says he\'s fine, but he\'s not.' },
       { pt: 'Mais duas, e uma para o motorista que não bebe.', en: 'Two more, and one for the driver who isn\'t drinking.' },
       { pt: 'Para onde vai a noite depois da meia-noite?', en: 'Where does the night go after midnight?' },

@@ -7,7 +7,7 @@ export default function Practical() {
     <section id="practical" className="section">
       <div className="wrap">
         <SectionHeader
-          num="09"
+          num="10"
           eyebrow="The boring but important"
           title="Practical."
         />

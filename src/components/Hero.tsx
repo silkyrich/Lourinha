@@ -21,9 +21,8 @@ export default function Hero() {
   return (
     <header id="top" className="hero" ref={ref}>
       <motion.div className="hero-photo" style={{ y, scale }} aria-hidden="true">
-        {/* "A pair of pink roller skates" by Sven Brandsma — Unsplash. Free for commercial use. */}
         <img
-          src="https://images.unsplash.com/photo-1554704674-8d3bd5e18b55?w=2400&q=80&auto=format&fit=crop"
+          src={`${import.meta.env.BASE_URL}img/hero-lourinha.jpg`}
           alt=""
           loading="eager"
         />
@@ -68,7 +67,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.65, duration: 0.6 }}
         >
-          Twenty-one of us. Eight days on the Portuguese coast. Bowls, bays, brandy, and the longest cruise of your summer.
+          Fifteen of us. Eight days on the Portuguese coast. Bowls, bays, brandy, and the longest cruise of your summer.
         </motion.p>
 
         <motion.div

@@ -5,6 +5,7 @@ const links = [
   { href: '#map', label: 'Map' },
   { href: '#skate', label: 'Skate' },
   { href: '#around', label: 'Around' },
+  { href: '#events', label: 'Events' },
   { href: '#do', label: 'Things to do' },
   { href: '#food', label: 'Food' },
   { href: '#phrases', label: 'Portuguese' },

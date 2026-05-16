@@ -15,7 +15,7 @@ export type Spot = {
   blurb: string
   lat: number
   lng: number
-  photoSeed: string
+  photo: string
 }
 
 export const spots: Spot[] = [
@@ -31,7 +31,7 @@ export const spots: Spot[] = [
     bestFor: 'Mornings before the wind',
     blurb: 'About a kilometre of seafront with a few low steps, ledges and gentle banks. Sunset rolls are unbeatable. Wind comes up around lunch.',
     lat: 39.2549, lng: -9.3367,
-    photoSeed: 'areia-branca',
+    photo: 'spot-areia-branca',
   },
   {
     id: 'praca-republica',
@@ -45,7 +45,7 @@ export const spots: Spot[] = [
     bestFor: 'Casual street, ledge play',
     blurb: 'The main square. Tolerance is reasonable outside business hours; weekday market mornings less so.',
     lat: 39.2417, lng: -9.3133,
-    photoSeed: 'lourinha-square',
+    photo: 'spot-praca-republica',
   },
   {
     id: 'n247-laybys',
@@ -59,7 +59,7 @@ export const spots: Spot[] = [
     bestFor: 'Downhill, sunset cruise',
     blurb: 'The coast road north has long quiet sections and pull-offs above the cliffs. Avoid weekend afternoons.',
     lat: 39.2880, lng: -9.3450,
-    photoSeed: 'n247-cliffs',
+    photo: 'spot-n247-cliffs',
   },
   {
     id: 'peniche-papoa',
@@ -73,7 +73,7 @@ export const spots: Spot[] = [
     bestFor: 'The bowl session of the week',
     blurb: 'On the headland looking at the lighthouse, ocean on three sides. Cleanest in the morning. Pair with a fish lunch in Peniche town.',
     lat: 39.3679, lng: -9.3859,
-    photoSeed: 'peniche-papoa',
+    photo: 'spot-peniche-papoa',
   },
   {
     id: 'caldas-park',
@@ -87,7 +87,7 @@ export const spots: Spot[] = [
     bestFor: 'Saturday combo with the market',
     blurb: 'Livelier inland town with a real scene. Saturday morning market is one of Portugal\'s best — make the full day of it.',
     lat: 39.4036, lng: -9.1369,
-    photoSeed: 'caldas-park',
+    photo: 'spot-caldas-park',
   },
   {
     id: 'torres-vedras',
@@ -101,7 +101,7 @@ export const spots: Spot[] = [
     bestFor: 'Quieter session, en route to Lisbon',
     blurb: 'Half-day option if you want a session away from the tourist towns.',
     lat: 39.0918, lng: -9.2592,
-    photoSeed: 'torres-vedras',
+    photo: 'spot-torres-vedras',
   },
   {
     id: 'ericeira',
@@ -115,7 +115,7 @@ export const spots: Spot[] = [
     bestFor: 'Skate + surf + the best fish lunch',
     blurb: 'World Surfing Reserve. Park is small but the day is about the round trip.',
     lat: 38.9636, lng: -9.4163,
-    photoSeed: 'ericeira-surf',
+    photo: 'spot-ericeira',
   },
   {
     id: 'lisbon',
@@ -129,7 +129,7 @@ export const spots: Spot[] = [
     bestFor: 'Planned whole-day route — LX Factory, MAAT, Comércio',
     blurb: 'Plan your line in advance. Riverside is the smoothest path; the historic centre is photogenic but cobbled.',
     lat: 38.7223, lng: -9.1393,
-    photoSeed: 'lisbon-river',
+    photo: 'spot-lisbon-river',
   },
   {
     id: 'nazare',
@@ -143,7 +143,7 @@ export const spots: Spot[] = [
     bestFor: 'Photo day, giant-wave canyon viewpoint',
     blurb: 'The giant waves are a winter thing, but the clifftop walk and funicular down to the beach work year-round.',
     lat: 39.6017, lng: -9.0707,
-    photoSeed: 'nazare-cliff',
+    photo: 'spot-nazare-cliff',
   },
   {
     id: 'cascais',
@@ -157,7 +157,7 @@ export const spots: Spot[] = [
     bestFor: 'The longest cruise of the trip',
     blurb: 'Roll Estoril casino to Cascais marina, lunch, return via the N247 over the Serra de Sintra.',
     lat: 38.6979, lng: -9.4215,
-    photoSeed: 'cascais-seafront',
+    photo: 'spot-cascais-seafront',
   },
 ]
 

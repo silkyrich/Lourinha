@@ -1,24 +1,30 @@
-export type AreaCard = { title: string; body: string; meta: string }
+export type AreaCard = { title: string; body: string; meta: string; photo: string }
 
 export const areaCards: AreaCard[] = [
   { title: 'The N247 coast — Peniche to Ericeira',
     body: 'The single best drive in the region. Cliffs, fishing villages, surf beaches, vineyards. Stops at Vimeiro, Areia Branca, Santa Cruz, Praia Azul.',
-    meta: '2.5h with stops · paved · low traffic' },
+    meta: '2.5h with stops · paved · low traffic',
+    photo: 'area-n247-drive' },
   { title: 'Serra de Sintra loop',
     body: 'N375 climbs into the Sintra mountains — hairpins, eucalyptus shade. Drop down to Cabo da Roca, then the coast road into Cascais.',
-    meta: '3h with stops · paved · busy at weekends' },
+    meta: '3h with stops · paved · busy at weekends',
+    photo: 'area-sintra-loop' },
   { title: 'Inland wine country',
     body: 'Bombarral → Óbidos → Alcobaça. Vineyards, the walled medieval town, the cistercian monastery, and the tomb of Pedro and Inês.',
-    meta: 'Half day · paved · cultural-heavy' },
+    meta: 'Half day · paved · cultural-heavy',
+    photo: 'area-obidos' },
   { title: 'Nazaré via São Martinho',
     body: 'Shell-shaped sheltered bay at São Martinho do Porto, then up to Nazaré and the funicular to Sítio for the giant-wave canyon viewpoint.',
-    meta: 'Full day · paved · dramatic' },
+    meta: 'Full day · paved · dramatic',
+    photo: 'area-saomartinho' },
   { title: 'Mafra & the royal road',
     body: 'The Palácio Nacional de Mafra is the largest baroque palace in Portugal; the royal hunting forest is open to visitors.',
-    meta: 'Half day · paved · low-key' },
+    meta: 'Half day · paved · low-key',
+    photo: 'area-mafra' },
   { title: 'Sintra town',
     body: 'UNESCO, four fairy-tale palaces in walking distance, tourist-heavy by 10am. Go early or late. Monserrate is the quietest and arguably the best.',
-    meta: 'Full day · steep · busy' },
+    meta: 'Full day · steep · busy',
+    photo: 'area-sintra-town' },
 ]
 
 export type ToDoItem = { tag: 'Skate' | 'See' | 'Eat' | 'Rest'; title: string; body: string }
@@ -43,5 +49,5 @@ export const practical: Practical[] = [
   { title: 'Money & plugs', body: 'Euros. Cards work everywhere. €30 in cash for markets and small bars. Plugs Type F.' },
   { title: 'Emergencies', body: '112 — all services. English is understood. Hospital in Caldas da Rainha; health centre in Lourinhã.' },
   { title: 'Pads', body: 'Bring them. Concrete bowls and Atlantic salt damp are unforgiving.' },
-  { title: 'Group comms', body: 'The WhatsApp group is where the week is run day-to-day — votes, where we\'re eating, who\'s skating what. Cez will pull you in if you\'re not already.' },
+  { title: 'Group comms', body: 'The WhatsApp group is where the week is run day-to-day — votes, where we\'re eating, who\'s skating what. Kes will pull you in if you\'re not already.' },
 ]

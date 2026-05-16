@@ -6,6 +6,7 @@ import Welcome from './components/Welcome'
 import MapSection from './components/MapSection'
 import Skate from './components/Skate'
 import Around from './components/Around'
+import Events from './components/Events'
 import ToDo from './components/ToDo'
 import Food from './components/Food'
 import Phrases from './components/Phrases'
@@ -25,6 +26,7 @@ export default function App() {
         <MapSection />
         <Skate />
         <Around />
+        <Events />
         <ToDo />
         <Food />
         <Phrases />

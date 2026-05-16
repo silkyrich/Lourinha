@@ -6,7 +6,7 @@ export default function Food() {
     <section id="food" className="section section--alt">
       <div className="wrap">
         <SectionHeader
-          num="06"
+          num="07"
           eyebrow="Eat, shop, drink"
           title="Food, supplies, and where the night goes."
         />

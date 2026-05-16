@@ -15,7 +15,7 @@ function SpotCard({ s, index }: { s: Spot; index: number }) {
   return (
     <Reveal as="article" className="spot" delay={index * 0.06}>
       <div className="spot-photo">
-        <img loading="lazy" src={`https://picsum.photos/seed/${s.photoSeed}/900/600`} alt="" />
+        <img loading="lazy" src={`${import.meta.env.BASE_URL}img/${s.photo}.jpg`} alt="" />
         <span className={`spot-badge spot-badge--${s.badge}`}>{badgeLabel}</span>
       </div>
       <div className="spot-body">
