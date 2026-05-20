@@ -1,4 +1,4 @@
-const calendarUrl = 'https://www.google.com/calendar/render?action=TEMPLATE&text=Lourinh%C3%A3+with+Skate+Strong&dates=20260530/20260607&details=The+official+Skate+Strong+trip+to+Lourinh%C3%A3.+Site%3A+https%3A%2F%2Fsilkyrich.github.io%2FLourinha%2F&location=Lourinh%C3%A3%2C+Portugal'
+const calendarUrl = 'https://www.google.com/calendar/render?action=TEMPLATE&text=Lourinh%C3%A3+with+Skate+Strong&dates=20260530/20260607&details=The+official+Skate+Strong+trip+to+Lourinh%C3%A3.+Site%3A+https%3A%2F%2Flourinha.richmorgan.co.uk%2F&location=Lourinh%C3%A3%2C+Portugal'
 
 export default function CalendarStrip() {
   return (

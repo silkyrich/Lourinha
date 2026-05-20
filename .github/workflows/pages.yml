@@ -1,12 +1,23 @@
-name: Deploy site to GitHub Pages
+name: Redirect old GitHub Pages URL to Cloudflare
+
+# The Lourinhã '26 site has migrated to Cloudflare Pages:
+#   https://lourinha.richmorgan.co.uk
+#
+# This workflow publishes a path-preserving redirect stub at the old
+# GitHub Pages URL (https://silkyrich.github.io/Lourinha/) so existing
+# links keep working.
+#
+# The real build now deploys to Cloudflare via deploy-cloudflare.yml.
 
 on:
   push:
     branches: [main]
+    paths:
+      - 'gh-pages-redirect/**'
+      - '.github/workflows/pages.yml'
   workflow_dispatch:
 
 permissions:
-  contents: read
   pages: write
   id-token: write
 
@@ -15,34 +26,19 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  deploy-redirect:
+    name: Publish redirect stub to GitHub Pages
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
+      - name: Upload redirect stub
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: gh-pages-redirect/
 
       - name: Deploy to GitHub Pages
         id: deployment
